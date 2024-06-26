@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "bIbzVGt4WjJySKxgAfymz24rP9dF6r3MCtgz0DI9Di0=",
+  "Source": "SampleDotNetCoreVueApp",
+  "BasePath": "_content/SampleDotNetCoreVueApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

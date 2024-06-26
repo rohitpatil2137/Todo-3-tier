@@ -1,0 +1,40 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+/dist/
+/*.log
+
+# Ignore .NET Core build output
+/bin/
+/obj/
+
+# Ignore environment-specific files
+.env.local
+.env.*.local
+
+# Ignore VS Code folder
+.vscode/
+
+# Ignore npm debugging logs
+npm-debug.log*
+
+# Ignore yarn.lock file
+yarn.lock
+
+# Ignore .NET Core user-specific files
+*.user
+*.vsconfig
+
+# Ignore .NET Core Visual Studio files
+*.suo
+*.cache
+*.csproj.user
+*.pdb
+*.dll
+*.cache
+*.exe
+*.opendb
+*.log
+*.sqlite
+*.suo
