@@ -28,7 +28,7 @@ Before you begin, ensure you have the following installed on your machine:
 
    ```sh
    git clone https://github.com/rohitpatil2137/SampleDotNetCoreVueApp.git
-   cd SampleDotNetCoreVueApp ```
+   cd SampleDotNetCoreVueApp 
   
 
 2. Navigate to the backend project directory:
