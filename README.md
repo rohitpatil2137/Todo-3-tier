@@ -1,6 +1,6 @@
 
 ```markdown
-# SampleDotNetCoreVueApp
+# TODO web Applcation using DotNet Core and VueApp
 
 This is a sample application that demonstrates a Todo list with a .NET Core 6 backend and a Vue.js frontend. The frontend is built using Node.js and Vue.js, while the backend is built using ASP.NET Core 6.
 
