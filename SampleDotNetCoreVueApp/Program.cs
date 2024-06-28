@@ -43,6 +43,12 @@ app.UseCors();
 
 app.UseAuthorization();
 
+// Health check endpoint
+app.MapGet("/health", async context =>
+{
+    await context.Response.WriteAsync("Backend is running!");
+});
+
 app.MapControllers();
 
 app.Run();

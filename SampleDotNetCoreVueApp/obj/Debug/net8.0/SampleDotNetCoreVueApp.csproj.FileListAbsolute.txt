@@ -31,3 +31,4 @@ E:\Azure\Project3\SampleDotNetCoreVueApp\obj\Debug\net8.0\refint\SampleDotNetCor
 E:\Azure\Project3\SampleDotNetCoreVueApp\obj\Debug\net8.0\SampleDotNetCoreVueApp.pdb
 E:\Azure\Project3\SampleDotNetCoreVueApp\obj\Debug\net8.0\SampleDotNetCoreVueApp.genruntimeconfig.cache
 E:\Azure\Project3\SampleDotNetCoreVueApp\obj\Debug\net8.0\ref\SampleDotNetCoreVueApp.dll
+E:\Azure\Project3\SampleDotNetCoreVueApp\obj\Debug\net8.0\SampleDotNetCoreVueApp.sourcelink.json

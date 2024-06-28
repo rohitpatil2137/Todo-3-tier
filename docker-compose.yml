@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./SampleDotNetCoreVueApp 
+      dockerfile: Dockerfile    # Ensure this matches your backend Dockerfile name
+    ports:
+      - "5000:5000"             # Map port 5000 from container to host
+    networks:
+      - my-network
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+
+  frontend:
+    build:
+      context: ./frontend       # Path to your frontend application directory
+      dockerfile: Dockerfile    # Ensure this matches your frontend Dockerfile name
+    ports:
+      - "8080:80"               # Map port 8080 from container to host
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
