@@ -1,0 +1,64 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: backend
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: backend
+#   template:
+#     metadata:
+#       labels:
+#         app: backend
+#     spec:
+#       containers:
+#       - name: backend
+#         image: rohitraut236/backend:5
+#         ports:
+#         - containerPort: 5000
+       
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: backend
+# spec:
+#   selector:
+#     app: backend
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 5000
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-backend
+spec:
+  replicas: 1  # Adjusted for redundancy
+  selector:
+    matchLabels:
+      app: dotnet-backend
+  template:
+    metadata:
+      labels:
+        app: dotnet-backend
+    spec:
+      containers:
+      - name: dotnet-backend
+        image: rohitraut236/backend:7.3  # Updated to latest version
+        ports:
+        - containerPort: 5000  # Adjusted port to match backend application
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnet-backend
+spec:
+  selector:
+    app: dotnet-backend
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000  # Target port should match container port
+  type: ClusterIP  # Internal service for backend communication

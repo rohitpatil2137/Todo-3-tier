@@ -1,0 +1,72 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: frontend
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: frontend
+#   template:
+#     metadata:
+#       labels:
+#         app: frontend
+#     spec:
+#       containers:
+#       - name: frontend
+#         image: rohitraut236/frontend:5
+#         ports:
+#         - containerPort: 80
+#         env:
+#         - name: VUE_APP_BACKEND_URL
+#           value: "http://backend"
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: frontend
+# spec:
+#   type: NodePort
+#   selector:
+#     app: frontend
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 80
+#       nodePort: 30001  # Expose frontend service on port 30000
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vuejs-frontend
+spec:
+  replicas: 1  # Adjusted for redundancy
+  selector:
+    matchLabels:
+      app: vuejs-frontend
+  template:
+    metadata:
+      labels:
+        app: vuejs-frontend
+    spec:
+      containers:
+      - name: vuejs-frontend
+        image: rohitraut236/frontend:7.3  # Updated to latest version
+        ports:
+        - containerPort: 80
+        env:
+        - name: VUE_APP_API_URL
+          value: "http://backend-service"  # Backend service URL
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vuejs-frontend
+spec:
+  selector:
+    app: vuejs-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer  # Expose frontend externally
